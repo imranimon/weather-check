@@ -2,6 +2,7 @@
 fetch('https://api.openweathermap.org/data/2.5/weather?q=dhaka&appid=adb316087053d49b3f1a231a615b71c2')
     .then(res => res.json())
     .then(data => setData(data))
+    .catch(error => console.log(error))
 
 function setData(data) {
     const displayTag = document.getElementById('display')
@@ -22,5 +23,6 @@ const searchWeather = () => {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=adb316087053d49b3f1a231a615b71c2`)
         .then(res => res.json())
         .then(data => setData(data))
+        .catch(error => console.log(error))
 
 }

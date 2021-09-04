@@ -1,5 +1,6 @@
 // On first load always show tthe current weather of dhaka
-fetch('https://api.openweathermap.org/data/2.5/weather?q=dhaka&appid=adb316087053d49b3f1a231a615b71c2')
+const API_KEY = 'adb316087053d49b3f1a231a615b71c2'
+fetch(`https://api.openweathermap.org/data/2.5/weather?q=dhaka&appid=${API_KEY}`)
     .then(res => res.json())
     .then(data => setData(data))
     .catch(error => console.log(error))
@@ -20,7 +21,7 @@ const searchWeather = () => {
     const city = document.getElementById('cityName')
     const cityName = city.value;
     city.value = ''
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=adb316087053d49b3f1a231a615b71c2`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}`)
         .then(res => res.json())
         .then(data => setData(data))
         .catch(error => console.log(error))
